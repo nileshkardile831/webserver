@@ -5,3 +5,5 @@ Next it will download and extract the wordpress site code into the Document Root
 Next it will ask you to enter a domain name,(If not then just put server IP) to get your wordpress site live.
 At the last it will setup database name, user and the permission.
 Check the entered domain/Ip is working on the browser.
+
+Lets Enjoy !!
