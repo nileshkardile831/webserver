@@ -4,7 +4,7 @@
 echo "----------------------------------------------------------------" >> /root/dstatus.txt
 echo "Setting up Nginx Server dated by `date`" >> /root/dstatus.txt
 
-for i in nginx mysql-server telnet php
+for i in nginx mysql-server mysql php
 
 do
 status=`dpkg -l | grep -i $i |tr -s ' '|cut -d ' ' -f2| head -1`
