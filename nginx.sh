@@ -40,10 +40,10 @@ sudo ln -s /etc/nginx/sites-available/$dname.conf /etc/nginx/sites-enabled/$dnam
 
 sudo service nginx restart >> /root/dstatus.txt
 
-#echo "create database example" | mysql -u root -pleo_123
-#echo "create user example" | mysql -u root -pleo_123
-#echo "grant all privileges on example.* to example@'localhost' identified by 'usermypass'" | mysql -u root -pleo_123
-#echo "flush privileges" | mysql -u root -pleo_123
+echo "create database example" | mysql -u root -pleo_123
+echo "create user example" | mysql -u root -pleo_123
+echo "grant all privileges on example.* to example@'localhost' identified by 'usermypass'" | mysql -u root -pleo_123
+echo "flush privileges" | mysql -u root -pleo_123
 
 
 echo "Nginx Web server has been Setup..!"
