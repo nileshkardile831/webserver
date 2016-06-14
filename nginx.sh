@@ -30,19 +30,23 @@ sudo chown -R www-data:www-data /var/www/$dname
 
 sudo chmod 755 /var/www/
 
-sudo cp /usr/share/nginx/html/index.html /var/www/$dname/
+#sudo cp /usr/share/nginx/html/index.html /var/www/$dname/
+
+wget http://wordpress.org/latest.zip
+
+unzip latest.zip -d /var/www/$dname
 
 echo -e "127.0.0.1\t$dname" >>  /etc/hosts
 
-echo -e "server {\nlisten 80;\nroot /var/www/$dname/;\nindex index.html index.htm;\nserver_name $dname;\n}" > /etc/nginx/sites-available/$dname.conf
+echo -e "server {\nlisten 80;\nroot /var/www/$dname/;\nindex index.html index.php index.htm;\nserver_name $dname;\n}" > /etc/nginx/sites-available/$dname.conf
 
 sudo ln -s /etc/nginx/sites-available/$dname.conf /etc/nginx/sites-enabled/$dname.conf
 
 sudo service nginx restart >> /root/dstatus.txt
 
-echo "create database example" | mysql -u root -pleo_123
-echo "create user example" | mysql -u root -pleo_123
-echo "grant all privileges on example.* to example@'localhost' identified by 'usermypass'" | mysql -u root -pleo_123
+echo "create database example.com_db" | mysql -u root -pleo_123
+echo "create user example.com_db" | mysql -u root -pleo_123
+echo "grant all privileges on example.com_db.* to example.com_db@'localhost' identified by 'usermypass'" | mysql -u root -pleo_123
 echo "flush privileges" | mysql -u root -pleo_123
 
 
